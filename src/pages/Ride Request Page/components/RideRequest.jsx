@@ -1,8 +1,17 @@
 import "./rideRequest.css"
+import Confirmation from "./Confirmation Component/Confirmation"
+import RideListing from "./RideListing Component/RideListing"
+import RideBooking from "./RideBooking Component/RideBooking"
+import SearchBar from "./SearchBar Component/SearchBar"
 
 function RideRequest() {
   return (
-    <div>RideRequest</div>
+    <>
+    <Confirmation/>
+    <RideListing/>
+    <RideBooking/>
+    <SearchBar/>
+    </>
   )
 }
 
