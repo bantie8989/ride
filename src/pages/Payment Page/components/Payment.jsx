@@ -1,7 +1,7 @@
 import "./payment.css";
 import PaymentSection from "./PaymentComponent/PaymentSection";
-import UserRideHistory from "./UserRideHistoryComponent/UserRideHistory";
-import Receipts from "./ReceiptsComponent/Receipts";
+import UserRideHistory from "./user Ride History/UserRideHistory";
+import Receipts from "./Receipts Component/Receipts";
 
 
 function Payment() {

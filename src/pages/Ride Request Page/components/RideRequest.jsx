@@ -1,6 +1,6 @@
 import "./rideRequest.css"
 import Confirmation from "./Confirmation Component/Confirmation"
-import RideListing from "./RideListing Component/RideListing"
+import RideListing from "./Ride Listings Component/RideListing"
 import RideBooking from "./RideBooking Component/RideBooking"
 import SearchBar from "./SearchBar Component/SearchBar"
 
