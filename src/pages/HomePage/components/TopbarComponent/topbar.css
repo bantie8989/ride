@@ -1,5 +1,4 @@
-/* couldy you give me best css for Topbar.jsx comonents
- */
+
 .top {
     display: flex;
     justify-content: space-between;
@@ -48,12 +47,27 @@
     object-fit: cover;
     border-radius: 50%;
     margin-right: 10px;
+    margin-left: 30px;
+
 }
 
 .topSearchIcon {
     font-size: 20px;
     cursor: pointer;
+    padding: 10px;
 }
 .topbarContainer{
     width: 100%;
+}
+.inputContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.searchInput{
+    outline: none;
+    border-radius: 20px;
+    padding: 10px; 
+   
 }
