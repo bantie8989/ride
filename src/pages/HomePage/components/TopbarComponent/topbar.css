@@ -1,0 +1,59 @@
+/* couldy you give me best css for Topbar.jsx comonents
+ */
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    background-color: #f5f5f5;
+    padding: 10px;
+}
+
+.topLeft {
+    display: flex;
+}
+
+.topIcon {
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.topCenter {
+    flex: 1;
+    text-align: center;
+}
+
+.topList {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+.topListItem {
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.topRight {
+    display: flex;
+    align-items: center;
+}
+
+.topImage {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.topSearchIcon {
+    font-size: 20px;
+    cursor: pointer;
+}
+.topbarContainer{
+    width: 100%;
+}

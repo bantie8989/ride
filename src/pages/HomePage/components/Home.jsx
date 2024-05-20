@@ -8,13 +8,13 @@ import Footer from './FooterComponent/Footer'
 
 function Home() {
   return (
-    <>
+    <div className='homeContainer'>    
+    <Topbar />
     <Hero/>
     <Benefit/>
     <Testimonial/>
-    <Topbar/>
     <Footer/>
-    </>
+    </div>
   )
 }
 
