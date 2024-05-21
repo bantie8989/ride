@@ -1,14 +1,22 @@
+import {
+  Button,
+  ColorModeContext,
+  Stack,
+  Switch,
+  useColorMode,
+} from "@chakra-ui/react";
 import "./topbar.css";
 import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
-  FaPhoneAlt,
-  FaEnvelope,
   FaSearch,
   FaPinterest,
 } from "react-icons/fa";
+
 function Topbar() {
+  const { colorMode, toggleColorMode } = useColorMode();
+
   return (
     <div className="topbarContainer">
       <div className="top">
@@ -27,6 +35,11 @@ function Topbar() {
             <FaInstagram />
           </i>
         </div>
+
+        <Button onClick={toggleColorMode}>
+          Toggle {ColorModeContext === "light" ? "Dark" : "Light"}
+        </Button>
+
         <div className="topCenter">
           <ul className="topList">
             <li className="topListItem">HOME</li>
@@ -34,7 +47,7 @@ function Topbar() {
             <li className="topListItem">ሾፌር</li>
             <li className="topListItem">ክፍያ</li>
             <li className="topListItem">የራይድ አገልግሎት </li>
-            <li className="topListItem">ስለ እኛ  </li>
+            <li className="topListItem">ስለ እኛ </li>
           </ul>
         </div>
         <div className="topRight">
@@ -42,7 +55,7 @@ function Topbar() {
             <i className="topSearchIcon ">
               <FaSearch />
             </i>
-            <input type="text" className="searchInput"  placeholder="ይፈልጉ..." />
+            <input type="text" className="searchInput" placeholder="ይፈልጉ..." />
           </div>
 
           <img
