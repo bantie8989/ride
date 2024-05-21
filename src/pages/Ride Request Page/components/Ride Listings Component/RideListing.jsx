@@ -1,9 +1,121 @@
-import React from 'react'
+import {
+  Button,
+  ButtonGroup,
+  Card,
+  CardBody,
+  CardFooter,
+  Divider,
+  Flex,
+  Heading,
+  Image,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+import React from "react";
 
 function RideListing() {
   return (
-    <div>RideListing</div>
-  )
+    <div>
+      <Flex>
+        <Card maxW="sm">
+          <CardBody>
+            <Image
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+              alt="Green double couch with wooden legs"
+              borderRadius="lg"
+            />
+            <Stack mt="6" spacing="3">
+              <Heading size="md">Living room Sofa</Heading>
+              <Text color="blue.600" fontSize="2xl">
+                መነሻ 150 ብር
+              </Text>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing="2">
+              <Button variant="solid" colorScheme="green">
+                እኔን ይምረጡ
+              </Button>
+            </ButtonGroup>
+          </CardFooter>
+        </Card>
+
+        <Card maxW="sm">
+          <CardBody>
+            <Image
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+              alt="Green double couch with wooden legs"
+              borderRadius="lg"
+            />
+            <Stack mt="6" spacing="3">
+              <Heading size="md">Living room Sofa</Heading>
+              <Text color="blue.600" fontSize="2xl">
+                መነሻ 150 ብር
+              </Text>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing="2">
+              <Button variant="solid" colorScheme="green">
+                እኔን ይምረጡ
+              </Button>
+            </ButtonGroup>
+          </CardFooter>
+        </Card>
+
+        <Card maxW="sm">
+          <CardBody>
+            <Image
+              src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+              alt="Green double couch with wooden legs"
+              borderRadius="lg"
+            />
+            <Stack mt="6" spacing="3">
+              <Heading size="md">Living room Sofa</Heading>
+              <Text color="blue.600" fontSize="2xl">
+                መነሻ 150 ብር
+              </Text>
+            </Stack>
+          </CardBody>
+          <Divider />
+          <CardFooter>
+            <ButtonGroup spacing="2">
+              <Button variant="solid" colorScheme="green">
+                እኔን ይምረጡ
+              </Button>
+            </ButtonGroup>
+          </CardFooter>
+        </Card>
+
+        <Card maxW="sm">
+        <CardBody>
+          <Image
+            src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+            alt="Green double couch with wooden legs"
+            borderRadius="lg"
+          />
+          <Stack mt="6" spacing="3">
+            <Heading size="md">Living room Sofa</Heading>
+            <Text color="blue.600" fontSize="2xl">
+              መነሻ 150 ብር
+            </Text>
+          </Stack>
+        </CardBody>
+        <Divider />
+        <CardFooter>
+          <ButtonGroup spacing="2">
+            <Button variant="solid" colorScheme="green">
+              እኔን ይምረጡ
+            </Button>
+
+          </ButtonGroup>
+        </CardFooter>
+      </Card>
+      </Flex>
+    </div>
+  );
 }
 
-export default RideListing
+export default RideListing;
