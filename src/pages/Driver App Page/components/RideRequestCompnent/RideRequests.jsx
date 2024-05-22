@@ -1,9 +1,71 @@
-import React from 'react'
+import {
+  Box,
+  Flex,
+  Heading,
+  Text,
+  Button,
+  List,
+  ListItem,
+  ListIcon,
+  Avatar,
+  Spacer,
+  useColorModeValue,
+} from '@chakra-ui/react';
 
-function RideRequests() {
+const RideRequests = ({ requests }) => {
+  const bgColor = useColorModeValue('gray.100', 'gray.700');
+
+  const handleAccept = (requestId) => {
+    // handle accepting the request
+  };
+
+  const handleDecline = (requestId) => {
+    // handle declining the request
+  };
+
   return (
-    <div>RideRequests</div>
-  )
-}
+    <Box p={4} bg={bgColor} borderRadius="lg" boxShadow="md">
+      <Heading as="h2" size="lg" mb={4}>
+        Ride Requests
+      </Heading>
 
-export default RideRequests
+      {requests && (
+        <List spacing={4}>
+          {requests.map((request) => (
+            <ListItem key={request.id}>
+              <Flex alignItems="center">
+                <Avatar size="sm" name={request.passengerName} src={request.passengerPhoto} />
+                <Spacer />
+                <Box>
+                  <Text fontWeight="bold">{request.passengerName}</Text>
+                  <Text>{request.pickupLocation} - {request.destination}</Text>
+                  <Text>Estimated fare: ${request.estimatedFare}</Text>
+                  <Text>
+                    {request.numPassengers} {request.numPassengers > 1 ? 'passengers' : 'passenger'}
+                  </Text>
+                </Box>
+                <Spacer />
+                <Box>
+                  <Button
+                    colorScheme="green"
+                    variant="solid"
+                    size="sm"
+                    mr={2}
+                    onClick={() => handleAccept(request.id)}
+                  >
+                    Accept
+                  </Button>
+                  <Button colorScheme="red" variant="solid" size="sm" onClick={() => handleDecline(request.id)}>
+                    Decline
+                  </Button>
+                </Box>
+              </Flex>
+            </ListItem>
+          ))}
+        </List>
+      )}
+    </Box>
+  );
+};
+
+export default RideRequests;

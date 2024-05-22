@@ -1,8 +1,6 @@
 import {
   Button,
   ColorModeContext,
-  Stack,
-  Switch,
   useColorMode,
 } from "@chakra-ui/react";
 import "./topbar.css";
@@ -57,7 +55,6 @@ function Topbar() {
             </i>
             <input type="text" className="searchInput" placeholder="ይፈልጉ..." />
           </div>
-
           <img
             className="topImage"
             src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"

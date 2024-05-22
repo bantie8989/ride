@@ -16,7 +16,7 @@ import React from "react";
 function RideListing() {
   return (
     <div>
-      <Flex>
+      <Flex >
         <Card maxW="sm">
           <CardBody>
             <Image

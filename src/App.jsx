@@ -12,9 +12,9 @@ function App() {
     <>
     {/* <Home/> */}
     {/* <Account/> */}
-    {/* <Driver/> */}
+    <Driver/>
     {/* <Payment/> */}
-    <RideRequest/>
+    {/* <RideRequest/> */}
     {/* <Footer/> */}
     {/* <About/> */}
     </>

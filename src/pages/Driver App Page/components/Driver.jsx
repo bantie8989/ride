@@ -6,10 +6,12 @@ import Navigation from './Navigation Compnent/Navigation'
 import RideRequest from './RideRequestCompnent/RideRequests'
 import Settings from './Settings component/Setting'
 import RideManagement from "./Ride Management Component/RideMangement"
+import Topbar from '../../HomePage/components/TopbarComponent/Topbar'
 
 function Driver() {
   return (
     <>
+    <Topbar/>
     <Dashboard/>
     <EarningHistory/>
     <Feedback/>
