@@ -1,8 +1,4 @@
-import {
-  Button,
-  ColorModeContext,
-  useColorMode,
-} from "@chakra-ui/react";
+import { Button, ColorModeContext, useColorMode } from "@chakra-ui/react";
 import "./topbar.css";
 import {
   FaFacebookF,
@@ -11,6 +7,7 @@ import {
   FaSearch,
   FaPinterest,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Topbar() {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -40,12 +37,25 @@ function Topbar() {
 
         <div className="topCenter">
           <ul className="topList">
-            <li className="topListItem">HOME</li>
-            <li className="topListItem">የኔ ገጽ </li>
-            <li className="topListItem">ሾፌር</li>
-            <li className="topListItem">ክፍያ</li>
-            <li className="topListItem">የራይድ አገልግሎት </li>
-            <li className="topListItem">ስለ እኛ </li>
+            <li className="topListItem">
+              <Link to={"/"}>HOME</Link>
+            </li>
+            <li className="topListItem">
+              <Link to={"/account"}>የኔ ገጽ</Link>
+            </li>
+            <li className="topListItem">
+              <Link to={"/driver"}>ሾፌር</Link>
+            </li>
+            <li className="topListItem">
+              <Link to={"/payment"}>ክፍያ</Link>
+            </li>
+            <li className="topListItem">
+              <Link to={"/ride-request"}>የራይድ አገልግሎት</Link>
+            </li>
+
+            <li className="topListItem">
+              <Link to={"/about"}>ስለ እኛ</Link>
+            </li>
           </ul>
         </div>
         <div className="topRight">
