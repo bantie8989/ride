@@ -1,32 +1,42 @@
-import React, { useState } from 'react';
-import { Box, Text, Heading,  Input, Button, Table, Thead, Tbody,
+import React, { useState } from "react";
+import {
+  Box,
+  Text,
+  Heading,
+  Input,
+  Button,
+  Table,
+  Thead,
+  Tbody,
   Tr,
   Th,
   Td,
   TableContainer,
   Select,
-} from '@chakra-ui/react';
+  HStack,
+  Center,
+} from "@chakra-ui/react";
 
 const rideHistory = [
   {
-    date: '2022-01-01',
-    time: '12:00 PM',
-    pickup: '123 Main St',
-    dropoff: '456 Elm St',
-    driver: 'Jane Smith',
-    car: 'Toyota Camry',
-    fare: '$20.00',
-    paymentMethod: 'Credit Card',
+    date: "2022-01-01",
+    time: "12:00 PM",
+    pickup: "123 Main St",
+    dropoff: "456 Elm St",
+    driver: "Jane Smith",
+    car: "Toyota Camry",
+    fare: "$20.00",
+    paymentMethod: "Credit Card",
   },
   {
-    date: '2022-01-05',
-    time: '2:00 PM',
-    pickup: '789 Oak St',
-    dropoff: '321 Maple St',
-    driver: 'John Doe',
-    car: 'Honda Civic',
-    fare: '$30.00',
-    paymentMethod: 'Debit Card',
+    date: "2022-01-05",
+    time: "2:00 PM",
+    pickup: "789 Oak St",
+    dropoff: "321 Maple St",
+    driver: "John Doe",
+    car: "Honda Civic",
+    fare: "$30.00",
+    paymentMethod: "Debit Card",
   },
   // Add more rides as needed
 ];
@@ -46,8 +56,12 @@ const RideHistory = () => {
     if (filterDateRange.startDate || filterDateRange.endDate) {
       filteredRides = filteredRides.filter((ride) => {
         const rideDate = new Date(ride.date);
-        const startDate = filterDateRange.startDate ? new Date(filterDateRange.startDate) : null;
-        const endDate = filterDateRange.endDate ? new Date(filterDateRange.endDate) : null;
+        const startDate = filterDateRange.startDate
+          ? new Date(filterDateRange.startDate)
+          : null;
+        const endDate = filterDateRange.endDate
+          ? new Date(filterDateRange.endDate)
+          : null;
 
         if (startDate && rideDate < startDate) {
           return false;
@@ -63,7 +77,9 @@ const RideHistory = () => {
 
     // Filter by payment method
     if (filterPaymentMethod) {
-      filteredRides = filteredRides.filter((ride) => ride.paymentMethod === filterPaymentMethod);
+      filteredRides = filteredRides.filter(
+        (ride) => ride.paymentMethod === filterPaymentMethod
+      );
     }
 
     return filteredRides;
@@ -75,12 +91,15 @@ const RideHistory = () => {
     }
 
     return [...rides].sort((a, b) => {
-      if (sortBy === 'date') {
+      if (sortBy === "date") {
         return new Date(a.date) - new Date(b.date);
       }
 
-      if (sortBy === 'fare') {
-        return parseFloat(a.fare.replace('$', '')) - parseFloat(b.fare.replace('$', ''));
+      if (sortBy === "fare") {
+        return (
+          parseFloat(a.fare.replace("$", "")) -
+          parseFloat(b.fare.replace("$", ""))
+        );
       }
 
       return 0;
@@ -90,44 +109,54 @@ const RideHistory = () => {
   const filteredAndSortedRides = sortRides(filterRides(rideHistory));
 
   return (
-    <Box p={4}>
-      <Heading as="h1" size="lg" mb={4}>
-        Ride History
-      </Heading>
+    <Box p={14}>
+      <Center>
+        <Heading as="h1" size="lg" mb={4}>
+          Ride History
+        </Heading>
+      </Center>
 
-      <Box mb={4}>
-        <Text fontWeight="bold">Filter by Date Range:</Text>
-        <Box display="flex" mt={2}>
-          <Input
-            type="date"
-            placeholder="Start Date"
-            onChange={(e) =>
-              setFilterDateRange({ ...filterDateRange, startDate: e.target.value })
-            }
-          />
-          <Input
-            type="date"
-            placeholder="End Date"
-            ml={2}
-            onChange={(e) =>
-              setFilterDateRange({ ...filterDateRange, endDate: e.target.value })
-            }
-          />
+      <HStack spacing={10} justifyContent={"space-between"} p={10}>
+        <Box mb={4}>
+          <Text fontWeight="bold">Filter by Date Range:</Text>
+          <Box display="flex" mt={2}>
+            <Input
+              type="date"
+              placeholder="Start Date"
+              onChange={(e) =>
+                setFilterDateRange({
+                  ...filterDateRange,
+                  startDate: e.target.value,
+                })
+              }
+            />
+            <Input
+              type="date"
+              placeholder="End Date"
+              ml={2}
+              onChange={(e) =>
+                setFilterDateRange({
+                  ...filterDateRange,
+                  endDate: e.target.value,
+                })
+              }
+            />
+          </Box>
         </Box>
-      </Box>
 
-      <Box mb={4}>
-        <Text fontWeight="bold">Filter by Payment Method:</Text>
-        <Select
-          placeholder="Select Payment Method"
-          mt={2}
-          onChange={(e) => setFilterPaymentMethod(e.target.value)}
-        >
-          <option value="Credit Card">Credit Card</option>
-          <option value="Debit Card">Debit Card</option>
-          <option value="Cash">Cash</option>
-        </Select>
-      </Box>
+        <Box mb={4}>
+          <Text fontWeight="bold">Filter by Payment Method:</Text>
+          <Select
+            placeholder="Select Payment Method"
+            mt={2}
+            onChange={(e) => setFilterPaymentMethod(e.target.value)}
+          >
+            <option value="Credit Card">Credit Card</option>
+            <option value="Debit Card">Debit Card</option>
+            <option value="Cash">Cash</option>
+          </Select>
+        </Box>
+      </HStack>
 
       <Box mb={4}>
         <Text fontWeight="bold">Sort by:</Text>

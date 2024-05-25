@@ -47,7 +47,7 @@ const Setting = () => {
   };
 
   return (
-    <Box p={4} bg="black.200" borderRadius="lg" boxShadow="md">
+    <Box p={14} bg="black.200" borderRadius="lg" boxShadow="md" text>
       <Heading as="h2" size="lg" mb={4}>
         Settings
       </Heading>
