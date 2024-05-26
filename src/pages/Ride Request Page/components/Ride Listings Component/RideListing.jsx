@@ -18,6 +18,17 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import {
+  FaCampground,
+  FaCar,
+  FaChair,
+  FaClock,
+  FaDollarSign,
+  FaLandmark,
+  FaRoad,
+  FaTimes,
+  FaUserTimes,
+} from "react-icons/fa";
 
 const RideListing = () => {
   const [filters, setFilters] = useState({
@@ -242,17 +253,26 @@ const RideListing = () => {
   const columnCount = useBreakpointValue({ base: 1, md: 2, lg: 3 });
 
   return (
-    <Box w={"100%"} p={10} m={10}>
+    <Box w={"100%"} p={10}>
       {/* Filter section */}
       <VStack mb={4}>
-        <Text fontSize="lg" mb={2}>
+        <Text
+          fontSize={50}
+          mb={12}
+          color={"yellow"}
+          backgroundColor={"black"}
+          w={"100%"}
+          textAlign={"center"}
+          fontStyle={"initial"}
+        >
           Filter by:
         </Text>
-        <HStack spacing={4}>
+        <HStack spacing={24}>
           <Select
             value={filters.numSeats}
             onChange={(e) => handleFilterChange("numSeats", e.target.value)}
             placeholder="Number of seats"
+            backgroundColor={"blue.300"}
           >
             <option value="1">1</option>
             <option value="2">2</option>
@@ -263,6 +283,7 @@ const RideListing = () => {
             value={filters.carType}
             onChange={(e) => handleFilterChange("carType", e.target.value)}
             placeholder="Car type"
+            backgroundColor={"blue.300"}
           >
             <option value="Fuel-efficient">Fuel-efficient</option>
             <option value="Luxury">Luxury</option>
@@ -284,7 +305,7 @@ const RideListing = () => {
       {/* Ride listings section */}
 
       <SimpleGrid columns={columnCount} spacing={18} mt={10}>
-        {filteredRideListings.map((ride , index) => (
+        {filteredRideListings.map((ride, index) => (
           <Grid templateColumns="repeat(1, 1fr)" gap={14} key={index}>
             <GridItem key={ride.id} p={10}>
               <Flex
@@ -306,24 +327,49 @@ const RideListing = () => {
                   {ride.driver.rating} stars
                 </Badge>
               </Flex>
-              <Text fontSize="md" mb={2}>
-                {ride.origin} → {ride.destination}
-              </Text>
-              <Text fontSize="md" mb={2}>
-                Estimated travel time: {ride.travelTime}
-              </Text>
-              <Text fontSize="md" mb={2}>
-                Estimated cost: {ride.cost}
-              </Text>
-              <Text fontSize="md" mb={2}>
-                Number of seats available: {ride.numSeats}
-              </Text>
-              {ride.vehicle && (
-                <Text fontSize="md" mb={2}>
-                  Vehicle: {ride.vehicle}
-                </Text>
-              )}
-              <Text fontSize="md" mb={2}>
+              <Box color={"goldenrod"} fontWeight={"bolder"}>
+                <Box display={"flex"} alignItems={"center"}>
+                  <FaRoad />
+                  <Text fontSize="md" mb={2} ml={2}>
+                    {ride.origin} → {ride.destination}
+                  </Text>
+                </Box>
+                <Box display={"flex"} alignItems={"center"}>
+                  <FaClock />
+                  <Text fontSize="md" mb={2} ml={2}>
+                    Estimated travel time: {ride.travelTime}
+                  </Text>
+                </Box>
+                <Box display={"flex"} alignItems={"center"}>
+                  <FaDollarSign />
+                  <Text fontSize="md" mb={2} ml={2}>
+                    Estimated cost: {ride.cost}
+                  </Text>
+                </Box>
+
+                <Box display={"flex"} alignItems={"center"} >
+                  <FaCar/>
+                  {ride.vehicle && (
+                    <Text fontSize="md" mb={2} ml={2}>
+                      Vehicle: {ride.vehicle}
+                    </Text>
+                  )}
+                </Box>
+
+                <Box display={"flex"} alignItems={"center"}>
+                  <FaChair />
+                  <Text fontSize="md" mb={2} ml={2}>
+                    Number of seats available: {ride.numSeats}
+                  </Text>
+                </Box>
+              </Box>
+
+              <Text
+                fontSize="md"
+                mb={2}
+                color={"goldenrod"}
+                fontWeight={"bolder"}
+              >
                 Driver preferences:{" "}
                 {ride.driverPrefs.map((pref, index) => (
                   <Badge
