@@ -6,11 +6,11 @@ const Mission = () => {
   return (
     <Box p={14} m={10}>
       <Center>
-        <Heading size="lg" mb={4}>
+        <Heading size="lg" mb={24}>
           Our Mission and Vision
         </Heading>
       </Center>
-      <HStack spacing={8} alignItems="flex-start">
+      <HStack spacing={8} alignItems="flex-start" mt={10} mb={10}>
         <Box p={10}>
           <Text fontSize="lg" fontWeight="bold" mb={2} textAlign={"center"}>
             Mission Statement

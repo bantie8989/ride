@@ -36,10 +36,10 @@ const TeamIntroduction = () => {
 
   return (
     <Box>
-      <Text fontSize="3xl" fontWeight="bold" textAlign="center" mb={8}>
+      <Text fontSize="3xl" fontWeight="bold" textAlign="center" mb={40}>
         Our Team
       </Text>
-      <SimpleGrid columns={columnCount} spacing={8}>
+      <SimpleGrid columns={columnCount} spacing={8} mt={10}>
         {teamMembers.map((member, index) => (
           <Grid templateColumns="repeat(2, 1fr)" key={index} gap={4}>
             <GridItem w="100%">
@@ -53,7 +53,7 @@ const TeamIntroduction = () => {
               <Text fontSize="xl" fontWeight="bold" mb={2}>
                 {member.name}
               </Text>
-              <Text fontSize="lg" mb={4}>
+              <Text fontSize="lg" mb={4} fontWeight={'bold'}>
                 {member.title}
               </Text>
               <Text fontSize="md">{member.description}</Text>

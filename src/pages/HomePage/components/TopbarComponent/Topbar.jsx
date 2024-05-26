@@ -6,11 +6,15 @@ import {
   FaTwitter,
   FaSearch,
   FaPinterest,
+  FaMoon,
+  FaSun,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { color } from "framer-motion";
+
 
 function Topbar() {
-  const { colorMode, toggleColorMode } = useColorMode();
+  const { colorMode, toggleColorMode } = useColorMode("dark");
 
   return (
     <div className="topbarContainer">
@@ -30,10 +34,7 @@ function Topbar() {
             <FaInstagram />
           </i>
         </div>
-
-        <Button onClick={toggleColorMode}>
-          Toggle {ColorModeContext === "light" ? "Dark" : "Light"}
-        </Button>
+        <Button onClick={toggleColorMode}>color mode</Button>
 
         <div className="topCenter">
           <ul className="topList">
