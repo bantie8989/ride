@@ -14,7 +14,7 @@ const AddPaymentMethodModal = ({ isOpen, onClose, onAddPaymentMethod }) => {
   };
 
   return (
-    <Box>
+    <Box mb={10}>
       <Button onClick={onClose}>Close</Button>
       <Text fontSize="lg" fontWeight="bold">
         Add Payment Method

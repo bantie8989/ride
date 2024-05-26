@@ -109,9 +109,9 @@ const RideHistory = () => {
   const filteredAndSortedRides = sortRides(filterRides(rideHistory));
 
   return (
-    <Box p={14}>
+    <Box p={14} borderBlock={'Background'}  mb={10} borderRadius={10}>
       <Center>
-        <Heading as="h1" size="lg" mb={4}>
+        <Heading as="h1" size="lg" mb={4} color={'goldenrod'} p={10}>
           Ride History
         </Heading>
       </Center>
