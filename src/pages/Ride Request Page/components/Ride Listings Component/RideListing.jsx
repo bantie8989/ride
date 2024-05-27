@@ -16,6 +16,7 @@ import {
   grid,
   SimpleGrid,
   useBreakpointValue,
+  Img,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import {
@@ -52,7 +53,10 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
+
       driverPrefs: ["Non-smoking", "No music"],
     },
     {
@@ -68,6 +72,8 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
       driverPrefs: ["Non-smoking", "No music"],
     },
@@ -84,6 +90,8 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
       driverPrefs: ["Non-smoking", "No music"],
     },
@@ -100,6 +108,8 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
       driverPrefs: ["Non-smoking", "No music"],
     },
@@ -116,6 +126,8 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
       driverPrefs: ["Non-smoking", "No music"],
     },
@@ -132,6 +144,8 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
       driverPrefs: ["Non-smoking", "No music"],
     },
@@ -148,6 +162,8 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
       driverPrefs: ["Non-smoking", "No music"],
     },
@@ -164,6 +180,8 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
       driverPrefs: ["Non-smoking", "No music"],
     },
@@ -180,6 +198,8 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
       driverPrefs: ["Non-smoking", "No music"],
     },
@@ -196,6 +216,8 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
       driverPrefs: ["Non-smoking", "No music"],
     },
@@ -212,6 +234,8 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
       driverPrefs: ["Non-smoking", "No music"],
     },
@@ -228,6 +252,8 @@ const RideListing = () => {
       cost: " $50.00",
       numSeats: 4,
       vehicle: "Toyota Camry",
+      carPhoto:
+        "https://github.com/bantie8989/ride/blob/d69b20ed9bd4ae6d7eb43518e340498d7e4a00fc/src/assets/bacground.jpg",
       carType: "Fuel-efficient",
       driverPrefs: ["Non-smoking", "No music"],
     },
@@ -347,8 +373,8 @@ const RideListing = () => {
                   </Text>
                 </Box>
 
-                <Box display={"flex"} alignItems={"center"} >
-                  <FaCar/>
+                <Box display={"flex"} alignItems={"center"}>
+                  <FaCar />
                   {ride.vehicle && (
                     <Text fontSize="md" mb={2} ml={2}>
                       Vehicle: {ride.vehicle}
@@ -361,6 +387,11 @@ const RideListing = () => {
                   <Text fontSize="md" mb={2} ml={2}>
                     Number of seats available: {ride.numSeats}
                   </Text>
+                </Box>
+                {/* imgae of car */}
+                <Box display={"flex"} alignItems={"center"}>
+                  <FaCar />
+                  <Img src={ride.carPhoto} placeholder="car picture" />
                 </Box>
               </Box>
 
