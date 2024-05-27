@@ -47,12 +47,15 @@ const Setting = () => {
   };
 
   return (
-    <Box p={14} bg="black.200" borderRadius="lg" boxShadow="md" text>
+    <Box p={14} bg="black.200" border={'ridge'} borderRadius="lg" boxShadow="md" text>
       <Heading as="h2" size="lg" mb={4}>
         Settings
       </Heading>
 
-      <Box mb={4}>
+
+      <Box display={'flex'} padding={10}>
+
+      <Box ml={4} border={'ridge'} p={10} borderRadius={10}>
         <Heading as="h3" size="md" mb={2}>
           Profile Information
         </Heading>
@@ -85,7 +88,7 @@ const Setting = () => {
         </FormControl>
       </Box>
 
-      <Box mb={4}>
+      <Box ml={4} border={'ridge'} p={10} borderRadius={10}>
         <Heading as="h3" size="md" mb={2}>
           Notification Preferences
         </Heading>
@@ -109,7 +112,7 @@ const Setting = () => {
         </FormControl>
       </Box>
 
-      <Box mb={4}>
+      <Box ml={4} border={'ridge'} p={10} borderRadius={10}>
         <Heading as="h3" size="md" mb={2}>
           Vehicle Information
         </Heading>
@@ -146,7 +149,7 @@ const Setting = () => {
         </FormControl>
       </Box>
 
-      <Box mb={4}>
+      <Box ml={4} border={'ridge'} p={10} borderRadius={10}>
         <Heading as="h3" size="md" mb={2}>
           Support Resources
         </Heading>
@@ -159,6 +162,7 @@ const Setting = () => {
             Contact Us
           </Link>
         </Text>
+      </Box>
       </Box>
 
       <Button colorScheme="blue" variant="solid" size="lg" w="full">

@@ -38,8 +38,17 @@ const DriverDashboard = () => {
   };
 
   return (
-    <Box p={4} bg="black" borderRadius="lg" boxShadow="md" textAlign={"center"} >
-      <Flex justify="space-between" align="center" mb={4} justifyContent={"space-around"} pb={10}>
+    <Box p={4} borderRadius="lg" boxShadow="md" textAlign={"center"} padding={20} >
+      <Flex
+        justify="space-between"
+        align="center"
+        alignItems={'center'}
+        mb={14}
+        justifyContent={"space-around"}
+        p={5}
+        backgroundColor={'goldenrod'}
+        borderRadius={10}
+      >
         <Heading as="h2" size="lg" >
           Driver Dashboard
         </Heading>
@@ -53,10 +62,10 @@ const DriverDashboard = () => {
       </Flex>
 
       <Box mb={4}>
-        <Heading as="h3" size="md">
+        <Heading as="h3" size="md" fontWeight={'bolder'}>
           Upcoming Rides
         </Heading>
-        <List spacing={2}>
+        <List spacing={3} mt={10}>
           {upcomingRides.map((ride) => (
             <ListItem key={ride.id} py={2}>
               <ListIcon name="clock" color="gray.500" />
@@ -69,13 +78,13 @@ const DriverDashboard = () => {
         </List>
       </Box>
 
-      <Box mb={4}>
+      <Box mb={4} mt={15}>
         <Heading as="h3" size="md">
           Earnings Summary
         </Heading>
-        <Text>
+        <Text >
           Daily: {earnings.daily}
-          <br />
+          <br/>
           Weekly: {earnings.weekly}
         </Text>
       </Box>

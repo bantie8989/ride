@@ -12,6 +12,8 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 
+
+
 const RideRequests = ({ requests }) => {
   const bgColor = useColorModeValue('gray.100', 'gray.700');
 
@@ -24,15 +26,15 @@ const RideRequests = ({ requests }) => {
   };
 
   return (
-    <Box p={4} bg={bgColor} borderRadius="lg" boxShadow="md">
-      <Heading as="h2" size="lg" mb={4}>
+    <Box p={4} bg={bgColor} borderRadius="lg" boxShadow="md" backgroundColor={'goldenrod'} textAlign={'center'} m={10}>
+      <Heading as="h2" size="lg" mb={4} w={"100%"}  backgroundColor={'blue.200'} p={2} borderRadius={10}>
         Ride Requests
       </Heading>
 
-      {requests && (
+      {requests &&(
         <List spacing={4}>
           {requests.map((request) => (
-            <ListItem key={request.id}>
+            <ListItem key={request.id} border={'dotted' } borderColor={'black'} p={2}>
               <Flex alignItems="center">
                 <Avatar size="sm" name={request.passengerName} src={request.passengerPhoto} />
                 <Spacer />
