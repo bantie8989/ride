@@ -8,6 +8,7 @@ import Settings from "./Settings component/Setting";
 import RideManagement from "./Ride Management Component/RideMangement";
 import Topbar from "../../HomePage/components/TopbarComponent/Topbar";
 import Footer from "../../HomePage/components/FooterComponent/Footer";
+import RideHistory from "../../Account Page/components/Ride History Component/RideHistory"
 
 function Driver() {
   const sampleRequests = [
@@ -82,7 +83,7 @@ function Driver() {
       <Dashboard />
       <RideRequest requests={sampleRequests} />
       <Settings />
-      <EarningHistory />
+      <RideHistory/>
       <Feedback />
       <Navigation />
       <RideManagement  />

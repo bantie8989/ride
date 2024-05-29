@@ -280,6 +280,8 @@ const RideListing = () => {
 
   return (
     <Box w={"100%"} p={10}>
+
+
       {/* Filter section */}
       <VStack mb={4}>
         <Text
@@ -328,7 +330,12 @@ const RideListing = () => {
         </HStack>
       </VStack>
 
+
+
+
       {/* Ride listings section */}
+
+
 
       <SimpleGrid columns={columnCount} spacing={18} mt={10}>
         {filteredRideListings.map((ride, index) => (
