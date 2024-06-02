@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Text, Heading, VStack, HStack, Center } from "@chakra-ui/react";
+import { Box, Text, Heading, VStack, HStack, Center, Spacer } from "@chakra-ui/react";
 import { FaBullhorn, FaCamera, FaChalkboard } from "react-icons/fa";
 
 const Mission = () => {
@@ -9,6 +9,7 @@ const Mission = () => {
         <Heading size="lg" mb={24}>
           Our Mission and Vision
         </Heading>
+        
       </Center>
       <HStack spacing={8} alignItems="flex-start" mt={10} mb={10}>
         <Box p={10}>

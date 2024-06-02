@@ -6,6 +6,7 @@ import {
   Heading,
   HStack,
   IconButton,
+  Mark,
   Spacer,
   Text,
   useColorModeValue,
@@ -14,20 +15,9 @@ import {
 import { BsArrowLeft } from "react-icons/bs";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
-
-
-
-
-
-
-
-
-
-
-
 const libraries = ["places"];
 const mapContainerStyle = {
-  height: "300px",
+  height: "600px",
   width: "100%",
 };
 const center = {
@@ -40,7 +30,13 @@ const RideManagement = ({ ride, onBack }) => {
 
   return (
     <Box>
-      <Flex mb={4} alignItems="center">
+      <Box
+        p={4}
+        borderBottomWidth="1px"
+        display="flex"
+        alignItems="center"
+        justifyContent={"space-between"}
+      >
         <IconButton
           aria-label="Back"
           icon={<BsArrowLeft />}
@@ -48,12 +44,18 @@ const RideManagement = ({ ride, onBack }) => {
           variant="ghost"
           size="sm"
         />
-        <Heading size="md" ml={2}>
+        <Heading size="md" ml={2} color={"goldenrod"} margin={10} mb={5}>
           Ride Management
         </Heading>
-        <Spacer />
-      </Flex>
-      <VStack spacing={4} alignItems="flex-start">
+      </Box>
+      <Spacer mb={10} />
+      <VStack
+        spacing={4}
+        alignItems="flex-start"
+        m={10}
+        p={5}
+        color={"green.200"}
+      >
         <PassengerDetails passenger={ride.passenger} />
         <Map ride={ride} mapColor={mapColor} />
         <Flex w="100%" justifyContent="space-between">
@@ -82,13 +84,21 @@ const PassengerDetails = ({ passenger }) => {
     </VStack>
   );
 };
+//
 
 const Map = ({ ride, mapColor }) => {
   return (
     <LoadScript libraries={libraries}>
-      <GoogleMap mapContainerStyle={mapContainerStyle} center={center} zoom={15}>
+      <GoogleMap
+        mapContainerStyle={mapContainerStyle}
+        center={center}
+        zoom={15}
+      >
         <Marker position={ride.pickupLocation} icon={{ url: "/pickup.png" }} />
-        <Marker position={ride.dropoffLocation} icon={{ url: "/dropoff.png" }} />
+        <Marker
+          position={ride.dropoffLocation}
+          icon={{ url: "/dropoff.png" }}
+        />
         <div
           style={{
             position: "absolute",
@@ -96,7 +106,8 @@ const Map = ({ ride, mapColor }) => {
             left: 10,
             backgroundColor: mapColor,
             padding: "5px 10px",
-            borderRadius: "5px",color: "white",
+            borderRadius: "5px",
+            color: "white",
             fontSize: "12px",
           }}
         >

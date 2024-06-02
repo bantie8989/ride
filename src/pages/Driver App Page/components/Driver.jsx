@@ -81,12 +81,12 @@ function Driver() {
       phoneNumber: "123-456-7890",
     },
     pickupLocation: {
-      address: "123 Main St",
+      address: "2QR7+584, King George VI St, Addis Ababa 1000",
       lat: 37.7749,
       lng: -122.4194,
     },
     dropoffLocation: {
-      address: "456 Market St",
+      address: "3QP6+8JX, Gulele 19/20/21, Intoto Street, አዲስ አበባ",
       lat: 37.7849,
       lng: -122.4058,
     },

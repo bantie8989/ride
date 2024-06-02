@@ -9,8 +9,22 @@ import {
   ListIcon,
   Button,
   space,
+  Card,
+  Image,
+  Stack,
+  CardBody,
+  CardFooter,
+  Center,
+  HStack,
 } from "@chakra-ui/react";
 import { useState } from "react";
+import {
+  FaChalkboardTeacher,
+  FaHandPointDown,
+  FaHandPointRight,
+  FaQuoteRight,
+  FaStar,
+} from "react-icons/fa";
 
 const DriverDashboard = () => {
   const [isOnline, setIsOnline] = useState(true);
@@ -38,18 +52,24 @@ const DriverDashboard = () => {
   };
 
   return (
-    <Box p={4} borderRadius="lg" boxShadow="md" textAlign={"center"} padding={20} >
+    <Box
+      p={4}
+      borderRadius="lg"
+      boxShadow="md"
+      textAlign={"center"}
+      padding={20}
+    >
       <Flex
         justify="space-between"
         align="center"
-        alignItems={'center'}
+        alignItems={"center"}
         mb={14}
         justifyContent={"space-around"}
         p={5}
-        backgroundColor={'goldenrod'}
+        backgroundColor={"goldenrod"}
         borderRadius={10}
       >
-        <Heading as="h2" size="lg" >
+        <Heading as="h2" size="lg">
           Driver Dashboard
         </Heading>
         <Switch
@@ -60,38 +80,65 @@ const DriverDashboard = () => {
           {isOnline ? "Online" : "Offline"}
         </Switch>
       </Flex>
-
-      <Box mb={4}>
-        <Heading as="h3" size="md" fontWeight={'bolder'}>
-          Upcoming Rides
+      <Box>
+        <Heading
+          color={"green.200"}
+          p={10}
+          display={"flex"}
+          alignItems={"center"}
+        >
+          <FaHandPointRight size={100} />
+          "Help People Get Where They Need to Go. Be a Part of the Community."
         </Heading>
-        <List spacing={3} mt={10}>
-          {upcomingRides.map((ride) => (
-            <ListItem key={ride.id} py={2}>
-              <ListIcon name="clock" color="gray.500" />
-              <Text>
-                {ride.passengerName} - {ride.pickupLocation} -{" "}
-                {ride.estimatedArrivalTime}
-              </Text>
-            </ListItem>
-          ))}
-        </List>
       </Box>
 
       <Box mb={4} mt={15}>
-        <Heading as="h3" size="md">
-          Earnings Summary
-        </Heading>
-        <Text >
-          Daily: {earnings.daily}
-          <br/>
-          Weekly: {earnings.weekly}
-        </Text>
-      </Box>
+        <Center>
+          <Box>
+            <Card
+              direction={{ base: "column", sm: "row" }}
+              overflow="hidden"
+              variant="outline"
+            >
+              <Image
+                objectFit="cover"
+                maxW={{ base: "100%", sm: "200px" }}
+                src="https://images.unsplash.com/photo-1667489022797-ab608913feeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw5fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+                alt="Caffe Latte"
+              />
 
-      <Button colorScheme="blue" variant="solid" size="lg" w="half">
-        Access Navigation Tools
-      </Button>
+              <Stack>
+                <CardBody>
+                  <Heading as="h3" size="lg" color={"goldenrod"} p={10}>
+                    your Earnings Summary
+                  </Heading>
+
+                  <Text py="2">
+                    <Text>
+                      Daily: {earnings.daily}
+                      <br />
+                      Weekly: {earnings.weekly}
+                    </Text>
+                  </Text>
+                </CardBody>
+
+                <CardFooter>
+                  <Button variant="solid" colorScheme="blue">
+                    <HStack>
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                      <FaStar />
+                    </HStack>
+                  </Button>
+                </CardFooter>
+              </Stack>
+            </Card>
+          </Box>
+        </Center>
+      </Box>
     </Box>
   );
 };
