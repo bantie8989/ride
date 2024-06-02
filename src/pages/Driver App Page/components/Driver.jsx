@@ -1,7 +1,5 @@
 import "./driver.css";
 import Dashboard from "./Dashboard Component/Dashboard";
-import EarningHistory from "./Earning History Component/EarningHistory";
-import Feedback from "./Feedback Component/Feedback";
 import Navigation from "./Navigation Compnent/Navigation";
 import RideRequest from "./RideRequestCompnent/RideRequests";
 import Settings from "./Settings component/Setting";
@@ -76,6 +74,24 @@ function Driver() {
       numPassengers: 3,
     },
   ];
+  const ride = {
+    id: 123,
+    passenger: {
+      name: "John Doe",
+      phoneNumber: "123-456-7890",
+    },
+    pickupLocation: {
+      address: "123 Main St",
+      lat: 37.7749,
+      lng: -122.4194,
+    },
+    dropoffLocation: {
+      address: "456 Market St",
+      lat: 37.7849,
+      lng: -122.4058,
+    },
+  };
+
 
   return (
     <>
@@ -84,9 +100,8 @@ function Driver() {
       <RideRequest requests={sampleRequests} />
       <Settings />
       <RideHistory/>
-      <Feedback />
       <Navigation />
-      <RideManagement  />
+      <RideManagement ride = {ride}/>
       <Footer />
     </>
   );
