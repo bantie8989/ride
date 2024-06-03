@@ -17,6 +17,7 @@ import {
   SimpleGrid,
   useBreakpointValue,
   Img,
+  Spacer,
 } from "@chakra-ui/react";
 import { useState } from "react";
 import {
@@ -30,8 +31,10 @@ import {
   FaTimes,
   FaUserTimes,
 } from "react-icons/fa";
+import Confirmation from "../Confirmation Component/Confirmation";
 
 const RideListing = () => {
+  const [select, setSelect] = useState(false);
   const [filters, setFilters] = useState({
     numSeats: "",
     carType: "",
@@ -260,6 +263,10 @@ const RideListing = () => {
     // ...
   ]);
 
+  const handleclick = () => {
+    setSelect(!select);
+  };
+
   const handleFilterChange = (filter, value) => {
     setFilters((prevFilters) => ({ ...prevFilters, [filter]: value }));
   };
@@ -280,21 +287,23 @@ const RideListing = () => {
 
   return (
     <Box w={"100%"} p={10}>
-
-
       {/* Filter section */}
       <VStack mb={4}>
         <Text
-          fontSize={50}
+          fontSize={20}
           mb={12}
-          color={"yellow"}
-          backgroundColor={"black"}
+          p={5}
+          color={"black"}
+          backgroundColor={"goldenrod"}
           w={"100%"}
+          fontWeight={"bold"}
           textAlign={"center"}
           fontStyle={"initial"}
+          borderRadius={10}
         >
-          Filter by:
+          Filter by
         </Text>
+        <Spacer />
         <HStack spacing={24}>
           <Select
             value={filters.numSeats}
@@ -321,7 +330,7 @@ const RideListing = () => {
             value={filters.driverPrefs}
             onChange={(values) => handleFilterChange("driverPrefs", values)}
           >
-            <HStack spacing={2}>
+            <HStack spacing={8}>
               <Checkbox value="Non-smoking">Non-smoking</Checkbox>
               <Checkbox value="No music">No music</Checkbox>
               <Checkbox value="Pet-friendly">Pet-friendly</Checkbox>
@@ -330,12 +339,8 @@ const RideListing = () => {
         </HStack>
       </VStack>
 
-
-
-
       {/* Ride listings section */}
-
-
+      {select && <Confirmation ride={rideListings.id} />}
 
       <SimpleGrid columns={columnCount} spacing={18} mt={10}>
         {filteredRideListings.map((ride, index) => (
@@ -426,6 +431,7 @@ const RideListing = () => {
                 size="sm"
                 w="100%"
                 mb={4}
+                onClick={handleclick}
               >
                 Select
               </Button>

@@ -1,4 +1,3 @@
-import "./driver.css";
 import Dashboard from "./Dashboard Component/Dashboard";
 import Navigation from "./Navigation Compnent/Navigation";
 import RideRequest from "./RideRequestCompnent/RideRequests";
@@ -91,11 +90,15 @@ function Driver() {
       lng: -122.4058,
     },
   };
+  const driver = {  
+    name: "John Doe",
+    profilePicture: "https://via.placeholder.com/40x40",
+  };
 
 
   return (
     <>
-      <Topbar />
+    <Topbar   />
       <Dashboard />
       <RideRequest requests={sampleRequests} />
       <Settings />

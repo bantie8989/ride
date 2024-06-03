@@ -1,4 +1,4 @@
-import { Button, ColorModeContext, useColorMode } from "@chakra-ui/react";
+import { Button, Center, ColorModeContext, useColorMode } from "@chakra-ui/react";
 import "./topbar.css";
 import {
   FaFacebookF,
@@ -8,6 +8,16 @@ import {
   FaPinterest,
   FaMoon,
   FaSun,
+  FaHome,
+  FaAdversal,
+  FaInfoCircle,
+  FaCar,
+  FaCarSide,
+  FaPaypal,
+  FaRedRiver,
+  FaUserTie,
+  FaIdCard,
+  FaWheelchair,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { color } from "framer-motion";
@@ -17,7 +27,8 @@ function Topbar() {
   const { colorMode, toggleColorMode } = useColorMode("dark");
 
   return (
-    <div className="topbarContainer">
+    
+    <div className="topbarContainer" >
       <div className="top">
         <div className="topLeft">
           <i className="topIcon ">
@@ -39,23 +50,23 @@ function Topbar() {
         <div className="topCenter">
           <ul className="topList">
             <li className="topListItem">
-              <Link to={"/"}>HOME</Link>
+              <Link to={"/"}> <FaHome size={20}/> HOME</Link>
             </li>
             <li className="topListItem">
-              <Link to={"/account"}>የኔ ገጽ</Link>
+              <Link to={"/account"}><FaIdCard size={20}/>የኔ ገጽ</Link>
             </li>
             <li className="topListItem">
-              <Link to={"/driver"}>ሾፌር</Link>
+              <Link to={"/driver"}><Center><FaWheelchair size={20}/></Center>ሾፌር</Link>
             </li>
             <li className="topListItem">
-              <Link to={"/payment"}>ክፍያ</Link>
+              <Link to={"/payment"}><Center><FaPaypal size={20}/></Center>ክፍያ</Link>
             </li>
             <li className="topListItem">
-              <Link to={"/ride-request"}>የራይድ አገልግሎት</Link>
+              <Link to={"/ride-request"}><Center> <FaCarSide size={20}/></Center>የራይድ አገልግሎት</Link>
             </li>
 
             <li className="topListItem">
-              <Link to={"/about"}>ስለ እኛ</Link>
+              <Link to={"/about"}><FaInfoCircle size={20}/>ስለ እኛ</Link>
             </li>
           </ul>
         </div>
