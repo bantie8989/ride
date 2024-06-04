@@ -1,6 +1,8 @@
 import { Box, Text, Button, Center } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 
-const Confirmation = ({ride, user}) => {
+const Confirmation = () => {
+
   return (
     <Center w={"50%"}>
       <Box
@@ -11,21 +13,16 @@ const Confirmation = ({ride, user}) => {
         boxShadow="md"
         mb={4}
       >
+        
         <Text fontSize="lg" fontWeight="bold" color="green.800">
-        You have selected {ride}. Please wait...
+          You have selected you dirver . Please wait...
         </Text>
-        <Button
-          colorScheme="blue"
-          variant="solid"
-          size="sm"
-          w="100%"
-          mt={2}
-          onClick={() => {
-            // Add logic to proceed with the ride request
-          }}
-        >
-          Proceed
-        </Button>
+
+        <Link to={"/payment"}>
+          <Button colorScheme="blue" variant="solid" size="sm" w="100%" mt={2}>
+            Proceed
+          </Button>
+        </Link>
       </Box>
     </Center>
   );

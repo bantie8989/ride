@@ -340,7 +340,7 @@ const RideListing = () => {
       </VStack>
 
       {/* Ride listings section */}
-      {select && <Confirmation ride={rideListings.id} />}
+      {select && <Confirmation />}
 
       <SimpleGrid columns={columnCount} spacing={18} mt={10}>
         {filteredRideListings.map((ride, index) => (

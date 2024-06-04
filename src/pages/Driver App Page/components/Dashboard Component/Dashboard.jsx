@@ -4,11 +4,7 @@ import {
   Heading,
   Text,
   Switch,
-  List,
-  ListItem,
-  ListIcon,
   Button,
-  space,
   Card,
   Image,
   Stack,
@@ -19,15 +15,79 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import {
-  FaChalkboardTeacher,
-  FaHandPointDown,
   FaHandPointRight,
-  FaQuoteRight,
   FaStar,
 } from "react-icons/fa";
+import RideRequest from "../RideRequestCompnent/RideRequests";
 
 const DriverDashboard = () => {
   const [isOnline, setIsOnline] = useState(true);
+
+  const sampleRequests = [
+    {
+      id: 1,
+      passengerName: "John Doe",
+      passengerPhoto: "https://via.placeholder.com/40x40",
+      pickupLocation: "123 Main St",
+      destination: "456 Elm St",
+      estimatedFare: 15.5,
+      numPassengers: 1,
+    },
+    {
+      id: 2,
+      passengerName: "Jane Smith",
+      passengerPhoto: "https://via.placeholder.com/40x40",
+      pickupLocation: "789 Oak St",
+      destination: "321 Pine St",
+      estimatedFare: 20.0,
+      numPassengers: 2,
+    },
+    {
+      id: 3,
+      passengerName: "Bob Johnson",
+      passengerPhoto: "https://via.placeholder.com/40x40",
+      pickupLocation: "654 Maple St",
+      destination: "890 Birch St",
+      estimatedFare: 25.5,
+      numPassengers: 3,
+    },
+    {
+      id: 4,
+      passengerName: "Bob Johnson",
+      passengerPhoto: "https://via.placeholder.com/40x40",
+      pickupLocation: "654 Maple St",
+      destination: "890 Birch St",
+      estimatedFare: 25.5,
+      numPassengers: 3,
+    },
+    {
+      id: 5,
+      passengerName: "Bob Johnson",
+      passengerPhoto: "https://via.placeholder.com/40x40",
+      pickupLocation: "654 Maple St",
+      destination: "890 Birch St",
+      estimatedFare: 25.5,
+      numPassengers: 3,
+    },
+    {
+      id: 6,
+      passengerName: "Bob Johnson",
+      passengerPhoto: "https://via.placeholder.com/40x40",
+      pickupLocation: "654 Maple St",
+      destination: "890 Birch St",
+      estimatedFare: 25.5,
+      numPassengers: 3,
+    },
+    {
+      id: 7,
+      passengerName: "Bob Johnson",
+      passengerPhoto: "https://via.placeholder.com/40x40",
+      pickupLocation: "654 Maple St",
+      destination: "890 Birch St",
+      estimatedFare: 25.5,
+      numPassengers: 3,
+    },
+  ];
   const [upcomingRides, setUpcomingRides] = useState([
     {
       id: 1,
@@ -139,6 +199,8 @@ const DriverDashboard = () => {
           </Box>
         </Center>
       </Box>
+      {isOnline &&<RideRequest requests={sampleRequests} />
+}
     </Box>
   );
 };

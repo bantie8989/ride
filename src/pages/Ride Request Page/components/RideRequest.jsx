@@ -10,7 +10,6 @@ function RideRequest() {
     <>
     <Topbar/>
     <SearchBar/>
-    <Confirmation/>
     <RideListing/>
     {/* <RideBooking/> */}
     <Footer/>
