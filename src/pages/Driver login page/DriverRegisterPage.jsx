@@ -15,6 +15,7 @@ import Setting from "../Driver App Page/components/Settings component/Setting";
 import Topbar from "../HomePage/components/TopbarComponent/Topbar";
 import Footer from "../HomePage/components/FooterComponent/Footer";
 import { FaEye } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function DriverRegisterPage() {
   const [email, setEmail] = useState("");
@@ -132,21 +133,11 @@ function DriverRegisterPage() {
               />
               <FormErrorMessage>{error}</FormErrorMessage>
             </FormControl>
-            <Button
-              type="submit"
-              colorScheme="teal"
-              w={"full"}
-              mt={4}
-              isDisabled={
-                !password ||
-                !confirmPassword ||
-                !email ||
-                password !== confirmPassword ||
-                driverLicense
-              }
-            >
-              sign up
-            </Button>
+            <Link to={"/driver"}>
+              <Button type="submit" colorScheme="teal" w={"full"} mt={4}>
+                sign up
+              </Button>
+            </Link>
           </form>
         </Box>
       </Box>

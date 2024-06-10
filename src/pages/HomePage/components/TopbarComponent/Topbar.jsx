@@ -1,4 +1,4 @@
-import { Button, Center, ColorModeContext, Text, useColorMode } from "@chakra-ui/react";
+import { Button, Center, Text, useColorMode } from "@chakra-ui/react";
 import "./topbar.css";
 import {
   FaFacebookF,
@@ -6,21 +6,14 @@ import {
   FaTwitter,
   FaSearch,
   FaPinterest,
-  FaMoon,
-  FaSun,
   FaHome,
-  FaAdversal,
   FaInfoCircle,
-  FaCar,
   FaCarSide,
   FaPaypal,
-  FaRedRiver,
-  FaUserTie,
   FaIdCard,
   FaWheelchair,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { color } from "framer-motion";
 
 
 function Topbar() {

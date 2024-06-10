@@ -4,7 +4,6 @@ import {
   Heading,
   Input,
   Button,
-  Link,
   Text,
   FormControl,
   FormLabel,
@@ -12,6 +11,7 @@ import {
 } from "@chakra-ui/react";
 import { useState } from "react";
 import Topbar from "../HomePage/components/TopbarComponent/Topbar";
+import { Link } from "react-router-dom";
 
 const DriverLoginPage = () => {
   const [email, setEmail] = useState("");
@@ -57,41 +57,40 @@ const DriverLoginPage = () => {
         </Flex>
         <form onSubmit={handleSubmit}>
           <FormControl isInvalid={error}>
-            <FormLabel color={"gray.500"} fontWeight={"bolder"}>Email</FormLabel>
+            <FormLabel color={"gray.500"} fontWeight={"bolder"}>
+              Email
+            </FormLabel>
             <Input
               color={"blue.200"}
               type="email"
-             
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               placeholder="Enter your email"
-      
-              _placeholder={{ opacity: 1, color: 'gray.500' }}
+              _placeholder={{ opacity: 1, color: "gray.500" }}
             />
             <FormErrorMessage>{error}</FormErrorMessage>
           </FormControl>
           <FormControl isInvalid={error}>
-            <FormLabel color={"gray.500"}fontWeight={"bolder"}>Password</FormLabel>
+            <FormLabel color={"gray.500"} fontWeight={"bolder"}>
+              Password
+            </FormLabel>
             <Input
-            
               color={"blue.200"}
               type="password"
               value={password}
               onChange={(event) => setPassword(event.target.value)}
-              
               placeholder="Enter your password"
-              _placeholder={{ opacity: 1, color: 'gray.500' }}
+              _placeholder={{ opacity: 1, color: "gray.500" }}
             />
             <FormErrorMessage>{error}</FormErrorMessage>
           </FormControl>
-          <Button type="submit" colorScheme="teal" w={"full"}
-          mt={4}>
+          <Button type="submit" colorScheme="teal" w={"full"} mt={4}>
             Login
           </Button>
         </form>
         <Text mt={4} fontSize="sm" color="gray.600">
           Don't have an account?{" "}
-          <Link href="/register" color="teal.500">
+          <Link to={"/driver-register"} color="teal.500">
             Register now
           </Link>
         </Text>
