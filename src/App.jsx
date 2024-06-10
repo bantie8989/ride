@@ -9,6 +9,8 @@ import About from "./pages/About us Page/components/About";
 import RideManagement from "./pages/Driver App Page/components/Ride Management Component/RideMangement";
 import DriverLoginPage from "./pages/Driver login page/DriverLoginPage";
 import DriverRegisterPage from "./pages/Driver login page/DriverRegisterPage";
+import PassangerRegisterPage from "./pages/Passanger login Page/PassangerRegisterPage";
+import PassangerLoginPage from "./pages/Passanger login Page/PassangerLoginPage";
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/driver-login" element={<DriverLoginPage />} />
           <Route path="/driver-register" element={<DriverRegisterPage />} />
+          <Route path="/passanger-register" element={<PassangerRegisterPage />} />
+          <Route path="/passanger-login" element={<PassangerLoginPage />} />
+          
 
           <Route path="/ride-management" element={<RideManagement />} />
 
