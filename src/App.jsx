@@ -7,6 +7,7 @@ import Payment from "./pages/Payment Page/components/Payment";
 import RideRequest from "./pages/Ride Request Page/components/RideRequest";
 import About from "./pages/About us Page/components/About";
 import RideManagement from "./pages/Driver App Page/components/Ride Management Component/RideMangement";
+import DriverLoginPage from "./pages/Driver login page/DriverLoginPage";
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
           <Route path="/payment" element={<Payment />} />
           <Route path="/ride-request" element={<RideRequest />} />
           <Route path="/about" element={<About />} />
+          <Route path="/driver-login" element={<DriverLoginPage />} />
+
           <Route path="/ride-management" element={<RideManagement />} />
 
           {/* You can add more routes here */}

@@ -28,10 +28,13 @@ function Hero() {
         <ButtonGroup variant="outline" spacing="6">
           <Button colorScheme="green" borderColor={"none"}>
             {" "}
-            ለሹፍርና በዚህ ይመዝገቡ{" "}
+            ለሹፍርና በዚህ ይግብ {" "}
           </Button>
           <Button colorScheme="green" borderColor={"none"}>
-            ለድርጅት በዚህ የመዝገብ{" "}
+            ለድርጅት በዚህ ይግብ{" "}
+          </Button>
+          <Button colorScheme="green" borderColor={"none"}>
+            ለተሳፋሪ በዚሁ ይግቡ {" "}
           </Button>
         </ButtonGroup>
       </Box>
