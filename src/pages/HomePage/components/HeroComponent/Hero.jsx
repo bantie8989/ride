@@ -8,6 +8,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Hero() {
   return (
@@ -26,16 +27,22 @@ function Hero() {
           </Text>
         </HStack>
         <ButtonGroup variant="outline" spacing="6">
-          <Button colorScheme="green" borderColor={"none"}>
-            {" "}
-            ለሹፍርና በዚህ ይግብ {" "}
-          </Button>
+          <Link to={"/driver-login"}>
+            <Button colorScheme="green" borderColor={"none"}>
+              {" "}
+              ለሹፍርና በዚህ ይግብ{" "}
+            </Button>
+          </Link>
+
           <Button colorScheme="green" borderColor={"none"}>
             ለድርጅት በዚህ ይግብ{" "}
           </Button>
-          <Button colorScheme="green" borderColor={"none"}>
-            ለተሳፋሪ በዚሁ ይግቡ {" "}
-          </Button>
+
+          <Link to={"/passanger-login"}>
+            <Button colorScheme="green" borderColor={"none"}>
+              ለተሳፋሪ በዚሁ ይግቡ{" "}
+            </Button>
+          </Link>
         </ButtonGroup>
       </Box>
     </div>

@@ -38,7 +38,7 @@ const PassangerLoginPage = () => {
   };
 
   return (
-    <Box >
+    <Box>
       <Topbar />
       <Box
         bg="goldenrod"
@@ -85,9 +85,12 @@ const PassangerLoginPage = () => {
             />
             <FormErrorMessage>{error}</FormErrorMessage>
           </FormControl>
-          <Button type="submit" colorScheme="teal" w={"full"} mt={4}>
-            Login
-          </Button>
+          <Link to={"/ride-request"}>
+            {" "}
+            <Button type="submit" colorScheme="teal" w={"full"} mt={4}>
+              Login
+            </Button>
+          </Link>
         </form>
         <Text mt={4} fontSize="sm" color="gray.600">
           Don't have an account?{" "}
@@ -95,11 +98,11 @@ const PassangerLoginPage = () => {
             Register now
           </Link>
         </Text>
-      </Box >
-      <Box mt={70}>
-      <Footer/>
       </Box>
-  
+
+      <Box mt={70}>
+        <Footer />
+      </Box>
     </Box>
   );
 };

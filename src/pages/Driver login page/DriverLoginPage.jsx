@@ -68,7 +68,7 @@ const DriverLoginPage = () => {
               placeholder="Enter your email"
               _placeholder={{ opacity: 1, color: "gray.500" }}
             />
-            <FormErrorMessage>{error}</FormErrorMessage>
+            <FormErrorMessage color={"red"}>{error}</FormErrorMessage>
           </FormControl>
           <FormControl isInvalid={error}>
             <FormLabel color={"gray.500"} fontWeight={"bolder"}>
@@ -82,7 +82,7 @@ const DriverLoginPage = () => {
               placeholder="Enter your password"
               _placeholder={{ opacity: 1, color: "gray.500" }}
             />
-            <FormErrorMessage>{error}</FormErrorMessage>
+            <FormErrorMessage color={"red"}>{error}</FormErrorMessage>
           </FormControl>
           <Button type="submit" colorScheme="teal" w={"full"} mt={4}>
             Login
