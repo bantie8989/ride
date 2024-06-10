@@ -1,4 +1,4 @@
-import { Button, Center, ColorModeContext, useColorMode } from "@chakra-ui/react";
+import { Button, Center, ColorModeContext, Text, useColorMode } from "@chakra-ui/react";
 import "./topbar.css";
 import {
   FaFacebookF,
@@ -50,23 +50,23 @@ function Topbar() {
         <div className="topCenter">
           <ul className="topList">
             <li className="topListItem">
-              <Link to={"/"}> <FaHome size={20}/> HOME</Link>
+              <Link to={"/"}> <FaHome size={20}/> <Text fontSize={10}> ዋና ገጽ </Text></Link>
             </li>
             <li className="topListItem">
-              <Link to={"/account"}><FaIdCard size={20}/>የኔ ገጽ</Link>
+              <Link to={"/account"}><FaIdCard size={20}/> <Text fontSize={10}>የኔ ገጽ </Text></Link>
             </li>
             <li className="topListItem">
-              <Link to={"/driver"}><Center><FaWheelchair size={20}/></Center>ሾፌር</Link>
+              <Link to={"/driver"}><Center><FaWheelchair size={20}/></Center><Text fontSize={10}>ሾፌር</Text></Link>
             </li>
             <li className="topListItem">
-              <Link to={"/payment"}><Center><FaPaypal size={20}/></Center>ክፍያ</Link>
+              <Link to={"/payment"}><Center><FaPaypal size={20}/></Center><Text fontSize={10}>ክፍያ</Text></Link>
             </li>
             <li className="topListItem">
-              <Link to={"/ride-request"}><Center> <FaCarSide size={20}/></Center>የራይድ አገልግሎት</Link>
+              <Link to={"/ride-request"}><Center> <FaCarSide size={20}/></Center><Text fontSize={10}>የራይድ አገልግሎት</Text></Link>
             </li>
 
             <li className="topListItem">
-              <Link to={"/about"}><FaInfoCircle size={20}/>ስለ እኛ</Link>
+              <Link to={"/about"}><FaInfoCircle size={20}/><Text fontSize={10}>ስለ እኛ</Text></Link>
             </li>
           </ul>
         </div>

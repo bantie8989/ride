@@ -1,12 +1,19 @@
-import React from 'react';
-import { Box, Text, Button, Input, FormControl, FormLabel } from '@chakra-ui/react';
-import { useDisclosure } from '@chakra-ui/react';
+import React from "react";
+import {
+  Box,
+  Text,
+  Button,
+  Input,
+  FormControl,
+  FormLabel,
+} from "@chakra-ui/react";
+import { useDisclosure } from "@chakra-ui/react";
 
 const AddPaymentMethodModal = ({ isOpen, onClose, onAddPaymentMethod }) => {
-  const [cardNumber, setCardNumber] = React.useState('');
-  const [expirationMonth, setExpirationMonth] = React.useState('');
-  const [expirationYear, setExpirationYear] = React.useState('');
-  const [cvc, setCVC] = React.useState('');
+  const [cardNumber, setCardNumber] = React.useState("");
+  const [expirationMonth, setExpirationMonth] = React.useState("");
+  const [expirationYear, setExpirationYear] = React.useState("");
+  const [cvc, setCVC] = React.useState("");
 
   const handleSubmit = () => {
     onAddPaymentMethod({ cardNumber, expirationMonth, expirationYear, cvc });
@@ -53,7 +60,7 @@ const AddPaymentMethodModal = ({ isOpen, onClose, onAddPaymentMethod }) => {
       >
         Add Payment Method
       </Button>
-   </Box>
+    </Box>
   );
 };
 

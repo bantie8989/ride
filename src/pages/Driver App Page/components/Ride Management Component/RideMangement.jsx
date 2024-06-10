@@ -6,7 +6,6 @@ import {
   Heading,
   HStack,
   IconButton,
-  Mark,
   Spacer,
   Text,
   useColorModeValue,
@@ -56,8 +55,14 @@ const RideManagement = ({ ride, onBack }) => {
         p={5}
         color={"green.200"}
       >
+
+
+
         <PassengerDetails passenger={ride.passenger} />
         <Map ride={ride} mapColor={mapColor} />
+
+
+
         <Flex w="100%" justifyContent="space-between">
           <HStack>
             <Button colorScheme="blue" variant="outline">
@@ -84,10 +89,15 @@ const PassengerDetails = ({ passenger }) => {
     </VStack>
   );
 };
-//
+//        <Map ride={ride} mapColor={mapColor} />
+// import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+// const libraries = ["places"];
+
 
 const Map = ({ ride, mapColor }) => {
   return (
+
+
     <LoadScript libraries={libraries}>
       <GoogleMap
         mapContainerStyle={mapContainerStyle}
@@ -99,6 +109,9 @@ const Map = ({ ride, mapColor }) => {
           position={ride.dropoffLocation}
           icon={{ url: "/dropoff.png" }}
         />
+
+
+
         <div
           style={{
             position: "absolute",
